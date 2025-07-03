@@ -15,8 +15,8 @@ const ContinentSelector = ({ onSelect }) => {
                 key={continent}
                 onClick={() => onSelect(continent)}
                 className={`
-                  py-2 px-4 rounded transition text-white font-semibold
-                  ${isGlobal ? 'col-span-2 bg-green-600 hover:bg-green-700' : 'bg-blue-500 hover:bg-blue-600'}
+                    text-black font-semibold py-2 px-4 rounded transition
+                  ${isGlobal ? 'col-span-2' : 'col-span-1'} }
                 `}
               >
                 {continent}
