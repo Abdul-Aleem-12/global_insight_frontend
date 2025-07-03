@@ -1,4 +1,3 @@
-// src/components/charts/YearCountryHeatmap.jsx
 import React from 'react';
 import Plot from 'react-plotly.js';
 
@@ -58,7 +57,23 @@ const YearCountryHeatmap = ({ data }) => {
           plot_bgcolor: 'transparent',
           paper_bgcolor: 'transparent',
         }}
-        config={{ responsive: true }}
+        config={{
+          responsive: true,
+          displaylogo: false,
+          modeBarButtonsToRemove: [
+            'zoom2d',
+            'pan2d',
+            'select2d',
+            'lasso2d',
+            'zoomIn2d',
+            'zoomOut2d',
+            'autoScale2d',
+            'resetScale2d',
+            'hoverClosestCartesian',
+            'hoverCompareCartesian',
+            'toggleSpikelines',
+          ],
+        }}
         style={{ width: '100%', height: '500px' }}
       />
     </div>
