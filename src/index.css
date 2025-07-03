@@ -1,14 +1,18 @@
 @import "tailwindcss";
 
-@layer base {
-  p, h1, h2, h3, h4, h5, h6, input, button, textarea, select {
-    @apply text-gray-800;
-  }
+p,
+h1, h2, h3, h4, h5, h6,
+input,
+button,
+textarea,
+select {
+  color: #1f2937; /* Tailwind's text-gray-800 → #1f2937 */
+}
 
-  input::placeholder,
-  textarea::placeholder {
-    @apply text-gray-500;
-  }
+/* Placeholder color */
+input::placeholder,
+textarea::placeholder {
+  color: #6b7280; /* Tailwind's text-gray-500 → #6b7280 */
 }
 body,html,#root{
  height: 100%;
@@ -57,7 +61,7 @@ h1 {
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 3px solid #1b191911;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;

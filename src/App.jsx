@@ -8,7 +8,7 @@ import Dashboard from './pages/Dashboard';
 function App() {
   const [continent, setContinent] = useState(null);
   const [summary, setSummary] = useState(null);
-  const [dropdownOpen, setDropdownOpen] = useState(false); // <-- NEW
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   useEffect(() => {
     if (continent) {
@@ -25,7 +25,7 @@ function App() {
   const handleContinentChange = (item) => {
     setContinent(item);
     setSummary(null);
-    setDropdownOpen(false); // close dropdown after selection
+    setDropdownOpen(false);
   };
 
   return (
@@ -46,8 +46,10 @@ function App() {
           <div className="relative inline-block text-left">
             <button
               type="button"
-              className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-blue-600 text-sm font-medium hover:bg-blue-700"
               onClick={() => setDropdownOpen((prev) => !prev)}
+              className={`inline-flex justify-center w-full rounded-md border shadow-sm px-4 py-2 text-sm font-medium transition
+                ${dropdownOpen ? 'border-blue-500 bg-blue-100' : 'border-gray-300 bg-blue-600 hover:bg-blue-700'} 
+                text-black`}
             >
               🌍 {continent}
               <svg
@@ -65,9 +67,10 @@ function App() {
               </svg>
             </button>
 
-            {/* Dropdown options (only show if open) */}
+            {/* Dropdown options */}
             {dropdownOpen && (
-              <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
+              <div className="origin-top-right absolute right-0 mt-2 w-52 rounded-md bg-white z-50 
+                              border border-blue-300 shadow-md">
                 <div className="py-1">
                   {['Asia', 'Europe', 'North America', 'South America', 'Africa', 'Oceania', 'Global'].map((item) => (
                     <button
@@ -110,7 +113,8 @@ function App() {
       {!continent && (
         <ContinentSelector onSelect={setContinent} />
       )}
-      <Dashboard/>
+
+      <Dashboard />
     </div>
   );
 }
