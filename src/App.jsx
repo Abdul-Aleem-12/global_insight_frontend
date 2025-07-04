@@ -36,7 +36,7 @@ function App() {
           Global Insights Dashboard 🌍
         </h1>
         <p className="text-lg text-gray-600 mb-8">
-          Discover trends, stats, and more. - Assignment by Abdul Aleem A.
+          Discover trends, stats, and more. - Project by Abdul Aleem A.
         </p>
       </div>
 
